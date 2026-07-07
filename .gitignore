@@ -1,0 +1,18 @@
+# Virtual environment
+myenv/
+
+# Secrete
+.env
+
+# VS code
+.vscode
+
+# Python cache
+__pycache__
+*.pyc
+
+# Pytest cache
+.pytest_cache
+
+# HTML Reportd
+reports/

@@ -1,0 +1,38 @@
+name: API Tests
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13.1'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run smoke Tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+
+          TIMEOUT: 10
+        run: pytest -m smoke
+
+      - name: Run regression Tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL }}
+
+          TIMEOUT: 10
+        run: pytest -m regression
+
+      - name: Run negative Tests
+        env:
+          BASE_URL: ${{ secrets.BASE_URL}}
+        
+          TIMEOUT: 10
+        run: pytest -m negative
