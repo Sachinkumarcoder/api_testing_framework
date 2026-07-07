@@ -10,7 +10,7 @@ class APIClient:
     def __init__(self):
         self.base_url = os.getenv("BASE_URL", "https://jsonplaceholder.typicode.com")
         self.timeout = os.getenv("TIMEOUT", 10)
-        self.session = self._create_session()
+        self.session = self._create_session(self)
 
     def _create_session():
         session = requests.session()
