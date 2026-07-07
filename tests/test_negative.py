@@ -7,7 +7,7 @@ class TestNegativeScenarios:
     # =============================================
 
     @pytest.mark.negative
-    @pytest.mark.parametrize("endpoints", "invalid_id", [
+    @pytest.mark.parametrize("endpoints, invalid_id", [
         ("/posts", 99999),
         ("/users", 99999),
         ("/todos", 99999),

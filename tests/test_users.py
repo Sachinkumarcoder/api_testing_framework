@@ -1,6 +1,6 @@
 import pytest
 from jsonschema import validate
-from utils.api_client import USER_SCHEMA
+from utils.schemas import USER_SCHEMA
 
 class TestUsersAPI:
 

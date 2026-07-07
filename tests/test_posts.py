@@ -1,5 +1,5 @@
 import pytest
-from json import validate
+from jsonschema import validate
 from utils.schemas import POST_SCHEMA
 
 class TestPostAPI:
