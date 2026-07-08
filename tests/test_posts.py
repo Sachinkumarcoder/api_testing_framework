@@ -20,7 +20,7 @@ class TestPostAPI:
 
     @pytest.mark.smoke
     def test_create_post(self, client, sample_post):
-        response = client.post("/posts", sample_post)
+        response = client.post("/posts", json = sample_post)
         data = response.json()
 
         assert response.status_code == 201
