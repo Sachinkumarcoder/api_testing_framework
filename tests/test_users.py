@@ -16,7 +16,7 @@ class TestUsersAPI:
     @pytest.mark.smoke
     def test_get_user_schema(self, client):
         response = client.get("/users/1")
-        assert validate(instance = response.json(), schema=USER_SCHEMA)
+        validate(instance = response.json(), schema=USER_SCHEMA)
 
     @pytest.mark.smoke
     def test_user_email_format(self, client):

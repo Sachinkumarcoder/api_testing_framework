@@ -65,7 +65,7 @@ class TestPostAPI:
     @pytest.mark.regression
     def test_delete_post(self, client):
         response = client.delete("/posts/1")
-        assert response.status_code == [200, 204]
+        assert response.status_code in [200, 204]
 
     @pytest.mark.regression
     def test_response_time(self, client):
