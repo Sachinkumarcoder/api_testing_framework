@@ -36,19 +36,19 @@ class APIClient:
         response.raise_for_status()
         return response
     
-    def post(self, endpoint, params=None):
+    def post(self, endpoint, params=None, json = None):
         url = f"{self.base_url}{endpoint}"
-        response = self.session.post(url, params=params, timeout=self.timeout)
+        response = self.session.post(url, params=params, json=json, timeout=self.timeout)
         return response
 
-    def put(self, endpoint, params=None):
+    def put(self, endpoint, params=None, json = None):
         url= f"{self.base_url}{endpoint}"
-        response = self.session.put(url, params=params, timeout=self.timeout)
+        response = self.session.put(url, params=params, json=json, timeout=self.timeout)
         return response
     
-    def patch(self, endpoint, params=None):
+    def patch(self, endpoint, params=None, json = None):
         url= f"{self.base_url}{endpoint}"
-        response = self.session.patch(url, params=params, timeout=self.timeout)
+        response = self.session.patch(url, params=params, json=json, timeout=self.timeout)
         return response
     
     def delete(self, endpoint, params=None):
