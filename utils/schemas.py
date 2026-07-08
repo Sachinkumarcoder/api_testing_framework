@@ -58,7 +58,7 @@ TODO_SCHEMA = {
     "properties": {
         "userId": {"type": "integer"},
         "id": {"type": "integer"},
-        "title": {"type": "integer"},
+        "title": {"type": "string"},
         "completed": {"type": "boolean"}
     }
 }

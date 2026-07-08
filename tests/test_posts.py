@@ -49,7 +49,7 @@ class TestPostAPI:
 
     @pytest.mark.regression
     def test_update_post(self, client, updated_post):
-        response = client.put("/posts/1", updated_post)
+        response = client.put("/posts/1", json=updated_post)
         data = response.json()
 
         assert response.status_code == 200
@@ -57,7 +57,7 @@ class TestPostAPI:
 
     @pytest.mark.regression
     def test_patch_post(self, client):
-        response = client.patch("/posts/1", {"title": "patched title"})
+        response = client.patch("/posts/1", json={"title": "patched title"})
         data = response.json()
         assert response.status_code == 200
         assert data["title"] == "patched title"
