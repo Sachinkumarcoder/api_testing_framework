@@ -44,7 +44,7 @@ class TestUsersAPI:
     def test_first_five_users(self, client, user_id):
         response = client.get(f"/users/{user_id}")
         assert response.status_code == 200
-        assert validate(instance=response.json(), schema=USER_SCHEMA)
+        validate(instance=response.json(), schema=USER_SCHEMA)
 
     @pytest.mark.regerssion
     @pytest.mark.parametrize("user_id", range(1, 6))
@@ -57,7 +57,7 @@ class TestUsersAPI:
     def test_users_adderss_field(self, client):
         response = client.get("/users/1")
         data = response.json()
-        address = data["adderss"]
+        address = data["address"]
         assert "street" in address
         assert "city" in address
         assert "zipcode" in address

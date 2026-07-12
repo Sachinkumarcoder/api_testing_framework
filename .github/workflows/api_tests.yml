@@ -35,4 +35,4 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL}}
         
           TIMEOUT: 10
-        run: pytest -m negative
+        run: pytest -m negative                                            
